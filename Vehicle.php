@@ -10,16 +10,22 @@ abstract class Vehicle {
 	   ========================================================================== */
 	public function __construct($broj){
 		$this->brojOsobaUVozilu = $broj;
-		//echo $this->brojOsobaUVozilu;
-		
+		//echo $this->brojOsobaUVozilu;	
 	}
 
 	/* 
 	   Metoda vraća opis pojedinog vozila
 	   ========================================================================== */
-	// protected function getDescription(){
-        
- //    }
+	  protected function getDescription(){
+        $klasa=get_called_class();
+        if($klasa=='Car'){
+            $text='Wheeled, self-powered motor vehicle used for transportation';
+            echo $text;     
+        } else if($klasa=='Bicycle') {
+            $text='Human-powered, pedal-driven, single-track vehicle';
+            echo $text;
+        }
+    }
 
     /* 
        Metoda dodaje osobu u vozilo-moguće je dodati neograničen broj osoba u vozilo
@@ -29,8 +35,7 @@ abstract class Vehicle {
     	if(!$this->driving) {
     	 $this->brojOsobaUVozilu=($this->brojOsobaUVozilu)+1;
     	 echo 'Person added!';
-    	} else echo 'Cannot add person, vehicle is driving!';
-    	
+    	} else echo 'Cannot add person, vehicle is driving!';	
     	// echo $this->brojOsobaUVozilu;
     }	
 
@@ -40,9 +45,16 @@ abstract class Vehicle {
        ========================================================================== */
     public function removePerson(){
     	if(!$this->driving){
-    	$this->brojOsobaUVozilu=($this->brojOsobaUVozilu)-1;
-    	echo 'Person removed!';
+        if($this->brojOsobaUVozilu == 0){
+            echo 'Cannot remove person, vehicle is empty!';
+        
+    	//echo $this->brojOsobaUVozilu;
         //echo $this->brojOsobaUVozilu;
+        } else {
+          $this->brojOsobaUVozilu=($this->brojOsobaUVozilu)-1;
+          echo 'Person removed!';
+      
+        }
        } else echo 'Cannot remove person, vehicle is driving!';
     }
 
@@ -55,20 +67,18 @@ abstract class Vehicle {
     		$this->driving = true;	
     		echo 'Vehicle started!';
     	} else {
-    		echo 'Cannot start vehicle, zero people are in the car!';   		
+    		echo 'Cannot start vehicle, vehicle is empty!';   		
     	  }
-	 }
+	  }
 
     /* 
        zaustavlja vozilo
        ========================================================================== */
-    public function stop() {
-    	
- 		$this->driving=false;
- 		echo 'Vehicle stopped!';
-    	}
+    public function stop() { 	
+ 		   $this->driving=false;
+ 		   echo 'Vehicle stopped!';
+    }
 	
-
     /* 
        vraća maksimalan broj dozvoljenih osoba za pojedino vozilo
        ========================================================================== */

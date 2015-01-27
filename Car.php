@@ -5,16 +5,15 @@ class Car extends Vehicle {
 		$broj=abs($broj);
 		parent::__construct($broj);
 	}
-	public function getDescription() {
-		$text='Wheeled, self-powered motor vehicle used for transportation:';
-		echo $text;
+
+	 public function getDescription() {
+		parent::getDescription();	
 	}
 
 	public function drive(){
 		if(Car::getMaxPeople($this->brojOsobaUVozilu)){
 			parent::drive();
 		} else echo 'Cannot start vehicle, too many people!';
-    
 	}
 
 	public function getMaxPeople($brojLjudi){
@@ -22,9 +21,5 @@ class Car extends Vehicle {
 			return true;
 		} else return false;
     }
-
-
-	
-
-
+    
 }
