@@ -15,7 +15,7 @@ class Bicycle extends Vehicle {
     	if(Bicycle::getMaxPeople($this->brojOsobaUVozilu)){
     		parent::drive();
     	} else {
-    		echo 'Cannot start vehicle, too many people!';
+    		return 'Cannot start vehicle, too many people!';
     	}
     }
     

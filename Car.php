@@ -13,7 +13,7 @@ class Car extends Vehicle {
 	public function drive(){
 		if(Car::getMaxPeople($this->brojOsobaUVozilu)){
 			parent::drive();
-		} else echo 'Cannot start vehicle, too many people!';
+		} else return 'Cannot start vehicle, too many people!';
 	}
 
 	public function getMaxPeople($brojLjudi){
