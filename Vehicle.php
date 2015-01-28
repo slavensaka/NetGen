@@ -36,7 +36,6 @@ abstract class Vehicle {
     public function addPerson(){
     	if(!$this->driving) {
     	 $this->brojOsobaUVozilu=($this->brojOsobaUVozilu)+1;
-    	
        return 'Person added!';
     	} else return 'Cannot add person, vehicle is driving!';	
     	// echo $this->brojOsobaUVozilu;
@@ -49,14 +48,11 @@ abstract class Vehicle {
     public function removePerson(){
     	if(!$this->driving){
         if($this->brojOsobaUVozilu == 0){
-            return 'Cannot remove person, vehicle is empty!';
-        
-    	//echo $this->brojOsobaUVozilu;
-        //echo $this->brojOsobaUVozilu;
+            return 'Cannot remove person, vehicle is empty!';   
+    	       //echo $this->brojOsobaUVozilu;
         } else {
           $this->brojOsobaUVozilu=($this->brojOsobaUVozilu)-1;
-          return 'Person removed!';
-      
+          return 'Person removed!';   
         }
        } else return 'Cannot remove person, vehicle is driving!';
     }

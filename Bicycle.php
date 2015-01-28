@@ -1,16 +1,26 @@
 <?php
 
 class Bicycle extends Vehicle {
-	public function __construct($broj=0){
+
+    /* ==========================================================================
+       konstruktor - prima početni broj osoba u vozilu
+       ========================================================================== */
+    public function __construct($broj=0){
 		$broj=abs($broj);
 		parent::__construct($broj);
 	}
 
-	public function getDescription()
-    {
+    /* ==========================================================================
+        getDescription - metoda vraća opis pojedinog vozila
+        ========================================================================== */
+    public function getDescription(){
        parent::getDescription();
     }
-
+    
+    /* ==========================================================================
+        pokreće vozilo - vozilo je moguće pokrenuti samo ako vozilo nije 
+        prazno i ako broj osoba ne premašuje broj dozvoljenih osoba
+        ========================================================================== */
     public function drive(){
     	if(Bicycle::getMaxPeople($this->brojOsobaUVozilu)){
     		parent::drive();
@@ -19,6 +29,9 @@ class Bicycle extends Vehicle {
     	}
     }
     
+    /* ==========================================================================
+       vraća maksimalan broj dozvoljenih osoba za pojedino vozilo
+       ========================================================================== */
     public function getMaxPeople($brojLjudi){
     	if($brojLjudi <= 1) {
     		return true;
