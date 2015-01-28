@@ -46,7 +46,7 @@ echo $car->removePerson()."<br />"; // Cannot remove person, vehicle is driving!
 
 echo $car->stop()."<br />"; // Vehicle stopped!
 
-echo "<br /><br /><br />";
+echo "<br /><br />";
 
 ?>
 </div>
@@ -76,12 +76,6 @@ echo $bike->stop()."<br />"; // Vehicle stopped!
 
 echo $bike->removePerson()."<br />"; // Person removed!
 echo $bike->removePerson()."<br />"; // Cannot remove person, vehicle is empty!
-
-
-
-
-
-
 
 ?>
 </div>
