@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/car.js"></script>
+	<script src="./js/vehicle.js"></script>
+	<script src="./js/bicycle.js"></script>
+</head>
+<body>
+	<div id="car" class="car">
+		<script type="text/javascript">
+		  var car = new Car();
+          car.constructor(4);
+          car.getDescription();
+          car.drive();
+          car.addPerson();
+          car.stop();
+          car.addPerson();
+          car.addPerson();
+          car.drive();
+          car.removePerson();
+          car.drive();
+          car.removePerson();
+          car.stop();
+
+          document.write("<br/><br/>");
+          var bicycle = new Bicycle();
+          bicycle.constructor(2);
+          bicycle.getDescription();
+          bicycle.drive();
+		  bicycle.removePerson();
+ 		  bicycle.drive();
+		  bicycle.removePerson();
+ 		  bicycle.stop();
+		  bicycle.removePerson();
+		  bicycle.drive();
+		  bicycle.addPerson();
+		  bicycle.drive();
+		  bicycle.stop();
+		  bicycle.removePerson();
+		  bicycle.removePerson();
+
+
+		</script>
+
+
+	</div>	
+	<div id="bicycle" class="bicycle">
+	</div>
+
+	<!-- Footer dio osnovni -->
+<footer>
+	<ul>
+		<br class="clear" />
+		<h4 class="foot"><a href="javascript:void(0);">Made by: Slaven Sakačić</a></h4>
+	</ul>	
+</footer><!-- /footer -->
+</body>
+</html>
